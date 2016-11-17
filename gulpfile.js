@@ -90,6 +90,8 @@ gulp.task('scripts', function() {
 gulp.task('serve', ['sass', 'pug', 'scripts'], function() {
 	browserSync.init({
 		server: './public',
+		ghostMode: false,
+		port: 2121,
 		open: false,
 		reloadOnRestart: true,
 		notify: true,

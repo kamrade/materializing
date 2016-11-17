@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "browser": {
-    "jquery": "./node_modules/jquery/dist/jquery.js",
-    "bootstrap": "./node_modules/bootstrap/dist/js/bootstrap.js"
+    "jquery": "./public/lib/jquery/dist/jquery.js",
+    "materialize": "./public/lib/materialize/dist/js/materialize.js"
   },
   "browserify-shim": {
     "jquery": "$",
