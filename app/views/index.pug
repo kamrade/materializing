@@ -10,63 +10,76 @@ html(lang="en")
 		meta(name="apple-mobile-web-app-capable" content="yes")
 		title Test
 
+		link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
 		link(rel="stylesheet" type="text/css" href="css/styles.css")
 	body
 		.app
-			.row.header
-				.col.m2.s6
-					h5 Logo
-				.col.offset-m6.m4.s6
-					h5 user menu
-			.row.toolbar
-				.col.l4.m12 Transaction's Manager
-				.col.l8.m12
-					.row
-						.col.m2
-							button.btn.waves-effect.waves-light Reload
-						.col.m2
-							input(type="text" value="24.06.2015-24.06.2016")
-						.col.m2
-							input(type="text" placeholder="Currency")
-						.col.m2
-							input(type="text" placeholder="Wallets")
-						.col.m2
-							button.btn.waves-effect.waves-light Filter
-			.row.categories
-				.col.s12.m12.l6
-					.col.s3
-						.category
-							h6 All
-					.col.s3
-						.category
-							h6 Payments
-					.col.s3
-						.category
-							h6 Refunds
-					.col.s3
-						.category
-							h6 Payouts
-				.col.s12.m12.l6
-					.col.s12
-						.chart.category
-							h6 Chart
-			.row
-				.col.s12.l4
-					ul.tabs
-						li.tab.col.s3
-							a(href="#test1") Test 1
-						li.tab.col.s3
-							a(href="#test2") Test 2
-						li.tab.col.s3
-							a(href="#test3") Test 3
-						li.tab.col.s3
-							a(href="#test4") Test 4
-				div#test1.col.s12 Test 1
-				div#test2.col.s12 Test 2
-				div#test3.col.s12 Test 3
-				div#test4.col.s12 Test 4
+			header.header.mdl-grid
+				.mdl-cell.mdl-cell--2-col logo
+				.mdl-cell.mdl-cell--2-col.mdl-cell--8-offset-desktop.mdl-cell--4-offset-tablet user menu
+			section.toolbar.mdl-grid
+				.mdl-cell.mdl-cell--2-col.mdl-cell--8-col-tablet.mdl-cell--4-col-phone transactions manager
 
+				.mdl-cell.mdl-cell--8-col-desktop.mdl-cell--2-offset-desktop.mdl-cell--8-col-tablet.mdl-cell--4-col-phone
 
-		script(src="./lib/jquery/dist/jquery.js")
-		script(src="./lib/materialize/dist/js/materialize.js")
+					.mdl-grid.toolbox.mdl-grid--no-spacing
+
+						.mdl-cell.mdl-cell--6-col.mdl-cell--4-col-tablet.mdl-cell--4-col-phone
+							.mdl-grid
+								.mdl-cell.mdl-cell--2-col.mdl-cell--1-col-tablet.mdl-cell--1-col-phone
+									button.mdl-button.mdl-js-button.mdl-button--primary
+										i.material-icons add
+								.mdl-cell.mdl-cell--10-col.mdl-cell--7-col-tablet.mdl-cell--3-col-phone
+									input.mdl-textfield__input(type="text" id="sample1" value="24.06.2016 - 24.07.2016")
+
+						.mdl-cell.mdl-cell--6-col.mdl-cell--4-col-tablet.mdl-cell--4-col-phone
+							.mdl-grid
+								.mdl-cell.mdl-cell--5-col.mdl-cell--2-col-tablet.mdl-cell--1-col-phone
+									input.mdl-textfield__input(type="text" id="sample1" value="Currency")
+								.mdl-cell.mdl-cell--5-col.mdl-cell--4-col-tablet.mdl-cell--2-col-phone
+									input.mdl-textfield__input(type="text" id="sample1" value="Wallets")
+								.mdl-cell.mdl-cell--2-col.mdl-cell--2-col-tablet.mdl-cell--1-col-phone
+									button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored Submit
+
+			section.categories.mdl-grid.mdl-grid--no-spacing
+				.mdl-cell.mdl-cell--7-col-desktop.mdl-cell--8-col-tablet.mdl-cell--4-col-phone
+					.mdl-grid
+						.mdl-cell.mdl-cell--3-col-desktop.mdl-cell--2-col-tablet.mdl-cell--4-col-phone
+							h5.category-title All
+							.category
+						.mdl-cell.mdl-cell--3-col-desktop.mdl-cell--2-col-tablet.mdl-cell--4-col-phone
+							h5.category-title Payments
+							.category
+						.mdl-cell.mdl-cell--3-col-desktop.mdl-cell--2-col-tablet.mdl-cell--4-col-phone
+							h5.category-title Refunds
+							.category
+						.mdl-cell.mdl-cell--3-col-desktop.mdl-cell--2-col-tablet.mdl-cell--4-col-phone
+							h5.category-title Payouts
+							.category
+				.mdl-cell.mdl-cell--5-col-desktop.mdl-cell--8-col-tablet.mdl-cell--4-col-phone.mdl-cell--hide-phone.mdl-cell--hide-tablet
+					.mdl-grid
+						.mdl-cell.mdl-cell--12-col-desktop.mdl-cell--8-col-tablet.mdl-cell--4-col-phone
+							h5.category-title Graph
+							.category.graph
+			section.workspace.mdl-grid.mdl-grid--no-spacing
+				.mdl-cell.mdl-cell--12-col-desktop.mdl-cell--8-col-tablet.mdl-cell--4-col-phone
+					.mdl-grid
+						.mdl-cell.mdl-cell--12-col-desktop.mdl-cell--8-col-tablet.mdl-cell--4-col-phone
+							.mdl-tabs.mdl-js-tabs.mdl-js-ripple-effect
+								.mdl-tabs__tab-bar
+									a(href="#all-transactions-panel").mdl-tabs__tab.is-active All Transactions
+									a(href="#payments-panel").mdl-tabs__tab Payments
+									a(href="#refunds-panel").mdl-tabs__tab Refunds
+									a(href="#payouts-panel").mdl-tabs__tab Payouts
+
+								.mdl-tabs__panel.is-active#all-transactions-panel
+									h2 All transactions
+								.mdl-tabs__panel#payments-panel
+									h2 Payments
+								.mdl-tabs__panel#refunds-panel
+									h2 Refunds
+								.mdl-tabs__panel#payouts-panel
+									h2 Payouts
+
+		script(src="./lib/material-design-lite/material.min.js")
 		script(src="js/app.js")

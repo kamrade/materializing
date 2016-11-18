@@ -16,9 +16,9 @@
     "lib"
   ],
   "dependencies": {
-    "bootstrap": "^3.3.7",
     "font-awesome": "^4.6.3",
     "jquery": "^3.1.1",
-    "materialize": "^0.97.8"
+    "bootstrap-sass": "^3.3.7",
+    "material-design-lite": "^1.2.1"
   }
 }
